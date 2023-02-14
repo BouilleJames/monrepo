@@ -65,4 +65,15 @@ Enfin, sachez qu’il existe des noms « réservés » en JavaScript. Vous ne po
 Vous pouvez également noter qu’on utilise généralement la convention lower camel case pour définir les noms de variable en JavaScript. Cette convention stipule simplement que lorsqu’un nom de variable est composé de plusieurs mots, on colle les mots ensemble en utilisant une majuscule pour chaque mot sauf le premier. Par exemple, si je décide de nommer une variable « monage » j’écrirai en JavaScript let monAge ou var monAge.
 
 Ci-dessous, on crée nos deux premières variables en utilisant le mot clef let dans notre fichier cours.js :</p>
-![](https://www.pierre-giraud.com/wp-content/uploads/2019/05/javascript-variable-declaration.png)
+![imageVariable](javascript-variable-declaration.png)
+
+<p>Nos deux premières variables sont désormais créées. Cependant, elles ne stockent aucune valeur pour le moment.</p>
+
+##Initialiser une variable
+
+<p>Lorsqu’on assigne une valeur pour la première fois à une variable, c’est-à-dire lorsqu’on stocke une valeur dans une variable qui n’en stockait pas encore, on dit également qu’on initialise une variable.
+
+On va pouvoir initialiser une variable après l’avoir déclarée ou au moment de sa déclaration. Les deux façons de faire sont équivalentes en termes de résultat mais il est plus rapide (en termes d’écriture de code) d’initialiser une variable lors de sa déclaration puisque cela nous va nous éviter d’avoir à réécrire le nom de la variable.
+
+Pour initialiser une variable, on utilise l’opérateur = qui est dans ce cas non pas un opérateur d’égalité mais un opérateur d’assignation ou d’affectation comme ceci :</p>
+

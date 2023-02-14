@@ -34,10 +34,32 @@ alert ("ma variable a est de type :" + typeof (a) +
    "\nma variable u est de type :" + typeof (u) +
    "\nma variable nn est de type : " + typeof (nn));
 
+const heureOuverture = 9;
+const heureFermeture = 17;
+var heureActuelle = 9.3;
 
+if (heureActuelle < heureOuverture) {
+    alert("revenez plus tard")
+}else if (heureActuelle >= heureOuverture && heureActuelle <= heureFermeture){
+    alert("bienvenue")
+    if (heureActuelle < 12 ){
+        alert ("bienvenue nous sommes le matin")
+    }else{
+        alert("bienvenue nous sommes l'apres midi")
+    };
+}else {
+    alert("revenez demain")
+};
 
+ou en ternaire
 
-
+//      (heure < 12) ?
+//   alert('bienvenu nous sommes le matin')
+//   :
+//  alert("bienvenu nous sommes l'apres-midi")
+// } else {
+//  alert('revenez demain')
+// }
 
 
 

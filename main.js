@@ -21,9 +21,9 @@ alert ("ma variable a est de type :" + typeof (a) +
    "\nma variable d est de type :" + typeof (d)); 
 
    var machaine = "exemple";
-   var machaine = new String("exemple");
+   var maChaine = new String("exemple");
 
-   alert ("ma variable machaine est de type :" + typeof (maChaine) +
+   alert ("ma variable maChaine est de type :" + typeof (maChaine) +
    "\nma variable machaine est de type : " + typeof (machaine));
 
    var n = null;
@@ -34,7 +34,6 @@ alert ("ma variable a est de type :" + typeof (a) +
    "\nma variable u est de type :" + typeof (u) +
    "\nma variable nn est de type : " + typeof (nn));
 
-   ![capture]()
 
 
 

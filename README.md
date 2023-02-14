@@ -1,3 +1,2 @@
 # Cours de Javascript
-<center> ## Introduction au JavaScript </center
->
+##<center>Introduction au JavaScript</center>

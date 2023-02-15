@@ -180,3 +180,89 @@ De même, le fait qu’une même variable puisse stocker plusieurs valeurs dans 
 Le principe est ici le suivant : je vais chercher l’heure actuelle toutes les secondes et je stocke cette heure dans ma variable que j’affiche ensuite.
 
 A ce propos, il existe de nombreux moyens d’afficher le contenu d’une variable en JavaScript, que ce soit via la console JavaScript du navigateur, en utilisant une fonction alert() ou encore en insérant le contenu de notre variable au sein du contenu HTML de notre page. Nous verrons chacune de ces méthodes en détail en temps et en heure, au fil de ce cours.</p>
+
+## Tableaux
+<p>Pour créer un tableau vous devez placer une ligne de tirets (-) sous la ligne d'entête et séparer les colonnes avec des |. Vous pouvez aussi préciser l'alignement en utilisant des :</p>
+
+```
+| Aligné à gauche | Centré         | Aligné à droite |
+| :-------------- | :------------: | -----: |
+| Aligné à gauche | Ce texte       | Aligné à droite |
+| Aligné à gauche | est            | Aligné à droite |
+| Aligné à gauche | centré         | Aligné à droite |
+```
+| Aligné à gauche | Centré         | Aligné à droite |
+| :-------------- | :------------: | -----: |
+| Aligné à gauche | Ce texte       | Aligné à droite |
+| Aligné à gauche | est            | Aligné à droite |
+| Aligné à gauche | centré         | Aligné à droite |
+
+
+## Les codes raccourcis (shortcodes)
+
+### Alignements
+
+<p>La syntaxe markdown seule ne permet pas d’aligner du texte mais Grav inclus quelques shortcodes :</p>
+
+```
+[left]Texte aligné à gauche[/left]
+[center]Texte centré[/center]
+[right]Texte algné à droite[/right]
+```
+
+Après il reste possible d’utiliser du HTML et les classes CSS de Bootstrap :
+
+```
+<p class="text-center">Texte centré</p>
+```
+
+Les classes de Bootstrap sont :
+```
+ text-left|text-center|text-right|text-justify
+```
+### Couleurs
+
+La syntaxe markdown seule ne permet pas non plus d’utiliser des couleurs mais vous pouvez utiliser ce shortcode :
+
+```
+Texte normal suivi d’un [color=#26B260]texte coloré en vert[/color] dans un paragraphe.
+```
+Vous pouvez utiliser du code html :
+
+```
+Texte normal suivi d’un <span style="color: #26B260">texte coloré en vert</span> dans un paragraphe.
+```
+
+/Les classes Bootstrap de couleurs « contextuelles » sont aussi disponibles :)
+
+text-muted
+text-primary
+text-info
+text-success
+text-warning
+text-danger
+
+et également pour l’arrière plan.
+ Exemple:
+```
+Texte normal suivi d’un <span class="bg-info text-success">texte coloré en vert sur fond bleu</span> dans un paragraphe.
+```
+
+##Les types de données en JavaScript
+
+Les variables JavaScript vont pouvoir stocker différents types de valeurs, comme du texte ou un nombre par exemple. Par abus de langage, nous parlerons souvent de « types de variables » JavaScript.
+En JavaScript, contrairement à d’autres langages de programmation, nous n’avons pas besoin de préciser à priori le type de valeur qu’une variable va pouvoir stocker. Le JavaScript va en effet automatiquement détecter quel est le type de la valeur stockée dans telle ou telle variable, et nous allons ensuite pouvoir effectuer différentes opérations selon le type de la variable, ce qui va s’avérer très pratique pour nous !
+
+Une conséquence directe de cela est qu’on va pouvoir stocker différents types de valeurs dans une variable au fil du temps sans se préoccuper d’une quelconque compatibilité. Par exemple, une variable va pouvoir stocker une valeur textuelle à un moment dans un script puis un nombre à un autre moment.
+
+En JavaScript, il existe 7 types de valeurs différents. Chaque valeur qu’on va pouvoir créer et manipuler en JavaScript va obligatoirement appartenir à l’un de ces types. Ces types sont les suivants :
+
+```String``` ou « chaine de caractères » en français ;
+```Number``` ou « nombre » en français ;
+```Boolean``` ou « booléen » en français ;
+```Null``` ou « nul / vide » en français;
+```Undefined``` ou « indéfini » en français ;
+```Symbol``` ou « symbole » en français ;
+```Object``` ou « objet » en français ;
+
+Ce que vous devez bien comprendre ici est que les données vont pouvoir être manipulées différemment en fonction de leur type et qu’il est donc essentiel de les connaitre pour créer des scripts fonctionnels.

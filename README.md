@@ -266,3 +266,82 @@ En JavaScript, il existe 7 types de valeurs différents. Chaque valeur qu’on v
 ```Object``` ou « objet » en français ;
 
 Ce que vous devez bien comprendre ici est que les données vont pouvoir être manipulées différemment en fonction de leur type et qu’il est donc essentiel de les connaitre pour créer des scripts fonctionnels.
+
+var arrayNbr = [1, 2, 3];
+var arrayStr = ["a", "b", "c"];
+
+##Array.prototype.push()
+
+La méthode push() ajoute un ou plusieurs éléments à la fin d'un tableau et retourne la nouvelle taille du tableau.
+
+###Exemple interactif
+
+ arrayNbr.push(4); //[1, 2, 3, 4] ajoute la valeur indiqué à la fin du tableau
+
+###Array.prototype.pop()
+
+###Exemple interactif
+
+ arrayNbr.pop(); //[1, 2] retire la dernière valeur
+ 
+ ##Array.prototype.shift()
+
+ ###Exemple interactif
+ 
+ arrayNbr.shift(); //[2, 3] retire la première valeur
+
+##Array.prototype.unshift()
+
+ ###Exemple interactif
+
+ arrayNbr.unshift(0); //[0, 1, 2, 3] ajoute la valeur indiqué au début du tableau
+
+##Array.prototype.concat()
+
+ ###Exemple interactif
+
+ arrayStr.concat("d"); //fusionne des tableaux sans changer les valeurs du tableau initial
+
+##Array.prototype.join()
+
+ ###Exemple interactif
+
+ arrayStr.join('-'); // a-b-c joindre les valeurs du tableau sans changer les valeurs du tableau initial
+
+##Array.prototype.slice()
+
+###Exemple interactif
+
+ arrayStr.slice(1); // ["b", "c"] retire le nombre d'éléments indiqué du tableau en partant du début sans changer les valeurs du tableau initial
+
+ arrayStr.slice(-1); // ["b", "c"] retire le nombre d'éléments indiqué du tableau en partant du début et en comptant depuis la fin sans changer les valeurs du tableau initial
+
+##Array.prototype.includes()
+
+###Exemple interactif
+
+ arrayStr.includes("c"); //true vérifie si la valeur existe
+
+##Array.prototype.indexOf()
+
+###Exemple interactif
+
+ arrayStr.indexOf("c"); //2 renvoi le position (index) de la valeur dans le tableau
+
+##Array.prototype.reduce()
+
+###Exemple interactif
+
+ arrayNbr.reduce((acc, cou)=> acc + cou ) //6 additionne tous les éléments du tableau
+
+##Array.prototype.find()
+
+###Exemple interactif
+
+ arrayNbr.find(el => el > 2) //3 renvoie la valeur du premier élément trouvé dans le tableau qui respecte la condition
+ arrayNbr.findIndex(el => el > 2) //2 renvoie l'index du premier élément trouvé dans le tableau qui respecte la condition
+arrayNbr.map(el => el * 2); //[2, 4, 6] crée un nouveau tableau avec les résultats de l'appel d'une fonction fournie sur chaque élément du tableau appelant.
+ arrayNbr.some(el => el > 2); //true passe le test implémenté par la fonction fournie. Elle renvoie un booléen indiquant le résultat du test.
+ arrayNbr.filter(el => el > 1) // [2,3] renvoi tous les éléments qui respectent la condition
+ arrayNbr.every(el => el > 1);
+ arrayNbr.reverse();

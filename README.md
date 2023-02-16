@@ -339,7 +339,17 @@ La méthode push() ajoute un ou plusieurs éléments à la fin d'un tableau et r
 ###Exemple interactif
 
  arrayNbr.find(el => el > 2) //3 renvoie la valeur du premier élément trouvé dans le tableau qui respecte la condition
+
+##Array.prototype.findIndex()
+
+###Exemple interactif
+
  arrayNbr.findIndex(el => el > 2) //2 renvoie l'index du premier élément trouvé dans le tableau qui respecte la condition
+
+##Array.prototype.map()
+
+###Exemple interactif
+
 arrayNbr.map(el => el * 2); //[2, 4, 6] crée un nouveau tableau avec les résultats de l'appel d'une fonction fournie sur chaque élément du tableau appelant.
  arrayNbr.some(el => el > 2); //true passe le test implémenté par la fonction fournie. Elle renvoie un booléen indiquant le résultat du test.
  arrayNbr.filter(el => el > 1) // [2,3] renvoi tous les éléments qui respectent la condition

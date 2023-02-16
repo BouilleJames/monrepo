@@ -212,3 +212,51 @@
 //   }
 //   return element.style.backgroundColor = 'rgb(0, 255, 0)'
 // })
+
+// function getRandomInt() {
+//     return Math.floor(Math.random() * 256);
+// }
+
+
+
+const body = document.getElementsByTagName('body');
+const btn = document.getElementsByClassName('btn');
+// console.log(btn);
+
+function getRandomInt() {
+    return Math.floor(Math.random() * 256);
+}
+
+function getBodyBg() {
+    body[0].style.background = 'rgb('
+                                +getRandomInt()
+                                +', '
+                                +getRandomInt()
+                                +', '
+                                +getRandomInt()
+                                +')';
+}
+
+btn[0].addEventListener ('click', getBodyBg);
+
+// Comment insérer une image avec JavaScript ?
+// const img = document. querySelector("img"); Ensuite, attribuez une URL d'image à l'attribut src de l'élément image.
+
+const img = document.querySelector("#img");
+console.log(img);
+img.setAttribute('src', '/imgJs.png');
+console.log(test);
+for (let i = 0; i < test.length; i++) { 
+    console.log(test[i].getAttribute('id'));
+}
+
+Array.from(test).forEach(element => {
+    element.addEventListener(
+        'click',
+        function (e){
+            console.log(e.currentTarget.id)
+        }
+    )
+});
+
+

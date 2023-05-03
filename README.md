@@ -355,3 +355,125 @@ arrayNbr.map(el => el * 2); //[2, 4, 6] crée un nouveau tableau avec les résul
  arrayNbr.filter(el => el > 1) // [2,3] renvoi tous les éléments qui respectent la condition
  arrayNbr.every(el => el > 1);
  arrayNbr.reverse();
+
+Array.prototype.push()
+
+La méthode push() ajoute un ou plusieurs éléments à la fin d'un tableau et retourne la nouvelle taille du tableau.
+
+###Exemple interactif
+
+```const animals = ['pigs', 'goats', 'sheep'];const count = animals.push('cows');
+console.log(count);```
+<!-- Expected output: 4 -->
+console.log(animals);
+<!-- Expected output: Array ["pigs", "goats", "sheep", "cows"] -->
+
+animals.push('chickens', 'cats', 'dogs');
+console.log(animals);
+<!-- Expected output: Array ["pigs", "goats", ```"sheep", "cows", "chickens", "cats", "dogs"] -->
+```
+
+###Syntaxe
+
+```arr.push(élément1, ..., élémentN)```
+
+###Description
+
+La méthode push permet d'ajouter des valeurs à un tableau.
+
+push est une méthode générique. Cette méthode peut ainsi être utilisée avec les méthodes Function.call() ou Function.apply() sur des objets similaires aux tableaux.
+
+La méthode push se base sur la propriété length pour déterminer à partir de quel index les valeurs données doivent être insérées. Si la propriété length ne peut pas être convertie en nombre, l'index utilisé est 0. Si la propriété length n'est pas définie, elle est alors créée.
+
+Bien que push soit une méthode générique, elle ne peut pas être utilisée sur les chaînes de caractères ou sur l'objet arguments car ils sont immuables.
+
+##Répartir la syntaxe (...)
+
+La syntaxe spread( ...) permet à un itérable, tel qu'un tableau ou une chaîne, d'être étendu aux endroits où zéro ou plusieurs arguments (pour les appels de fonction) ou éléments (pour les littéraux de tableau) sont attendus. Dans un littéral d'objet, la syntaxe de propagation énumère les propriétés d'un objet et ajoute les paires clé-valeur à l'objet en cours de création.
+
+La syntaxe de diffusion ressemble exactement à la syntaxe de repos. D'une certaine manière, la syntaxe d'étalement est l'opposé de la syntaxe de repos. La syntaxe de propagation "étend" un tableau en ses éléments, tandis que la syntaxe de repos collecte plusieurs éléments et les "condense" en un seul élément. Voir les paramètres de repos et la propriété rest .
+
+###Essayez-le
+###JavaScript Demo: Expressions - Spread syntax
+
+```function sum(x, y, z) {
+  return x + y + z;
+}
+const numbers = [1, 2, 3];
+
+console.log(sum(...numbers));
+<!-- resultat attendu: 6 -->
+console.log(sum.apply(null, numbers));
+<!-- resultat attendu: 6 -->
+```
+
+```myFunction(a, ...iterableObj, b)
+[1, ...iterableObj, '4', 'five', 6]
+{ ...obj, key: 'value' }
+```
+
+###Description
+
+La syntaxe de propagation peut être utilisée lorsque tous les éléments d'un objet ou d'un tableau doivent être inclus dans un nouveau tableau ou objet, ou doivent être appliqués un par un dans la liste des arguments d'un appel de fonction. Il existe trois endroits distincts qui acceptent la syntaxe de diffusion :
+
+Liste des arguments de la fonctionmyFunction(a, ...iterableObj, b) ( )
+Littéraux de tableau ( [1, ...iterableObj, '4', 'five', 6])
+Littéraux d'objet ( { ...obj, key: 'value' })
+
+Bien que la syntaxe soit la même, ils viennent avec une sémantique légèrement différente.
+
+Seuls les objets itérables , comme Array, peuvent être répartis dans des paramètres de tableau et de fonction. De nombreux objets ne sont pas itérables, y compris tous les objets simples dépourvus de Symbol.iteratorméthode :
+
+const obj = { key1: "value1" };
+const array = [...obj]; // TypeError: obj is not iterable
+
+D'autre part, la propagation dans les littéraux d'objet énumère les propriétés propres de l'objet. Pour les tableaux typiques, tous les indices sont des propriétés propres énumérables, de sorte que les tableaux peuvent être répartis dans des objets.
+
+###Essayez-le
+const array = [1, 2, 3];
+const obj = { ...array }; // { 0: 1, 1: 2, 2: 3 }
+
+Lors de l'utilisation de la syntaxe étendue pour les appels de fonction, soyez conscient de la possibilité de dépasser la limite de longueur d'argument du moteur JavaScript. Voir Function.prototype.apply()pour plus de détails.
+
+###Exemples
+
+###Répartition dans les appels de fonction
+
+Remplacer appliquer()
+
+Il est courant de l'utiliser Function.prototype.apply()dans les cas où vous souhaitez utiliser les éléments d'un tableau comme arguments d'une fonction.
+
+###Essayez-le
+
+function myFunction(x, y, z) {}
+const args = [0, 1, 2];
+myFunction.apply(null, args);
+
+Avec la syntaxe propagée, ce qui précède peut être écrit comme suit :
+
+###Essayez-le
+
+function myFunction(x, y, z) {}
+const args = [0, 1, 2];
+myFunction(...args);
+
+Tout argument de la liste d'arguments peut utiliser la syntaxe de propagation, et la syntaxe de propagation peut être utilisée plusieurs fois.
+
+###Essayez-le
+
+function myFunction(v, w, x, y, z) {}
+const args = [0, 1];
+myFunction(-1, ...args, 2, ...[3]);
+
+###Demander un nouvel opérateur
+
+Lors de l'appel d'un constructeur avec new, il n'est pas possible d' utiliser directement un tableau et apply(), car apply() appelle la fonction cible au lieu de la construire , ce qui signifie, entre autres, que ce new.targetsera undefined. Cependant, un tableau peut être facilement utilisé newgrâce à la syntaxe d'étalement :
+
+###Essayez-le
+
+const dateFields = [1970, 0, 1]; // 1 Jan 1970
+const d = new Date(...dateFields);
+
+![exemple de code](https:code.png)
+#   j a v a s c r i p t  
+ 
